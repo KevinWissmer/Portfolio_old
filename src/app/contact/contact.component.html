@@ -1,0 +1,59 @@
+<div class="content_wrapper main" [class.move_in]="status  == 'contact'">
+
+  <div class="contact_image_wrapper">
+    <div class="contact_img_wrapper">
+      <img src="../../assets/img/anzug.jpg" alt="">
+    </div>
+    <div class="form_header_responsive_wrapper">
+      <div class="form_header_responsive">
+        Send me an Email, let´s get in contact!
+      </div>
+    </div>
+
+  </div>
+
+  <form class="input_form_wrapper" method="post" action=" ">
+
+    <div class="  form_header_wrapper">
+      <div class="form_header">
+        Send me an Email, let´s get in contact!
+      </div>
+    </div>
+
+    <div class="input_group">
+      <label for="Name" class="input_label  ">Your name</label>
+      <div class="input_field_wrapper">
+        <input type="text" id="Name" name="Name" class="input_element form__field" required>
+      </div>
+    </div>
+
+    <div class="input_group">
+      <label for="Email" class="input_label  ">Your email address</label>
+      <div class="input_field_wrapper">
+        <input type="email" id="Email" name="Email" class="input_element form__field" required>
+      </div>
+    </div>
+
+    <div class="input_group area_input_group">
+      <label for="Message" class="input_label ">Your message</label>
+      <div class="input_field_wrapper area_input_field_wrapper">
+        <textarea id="Message" name="Message" rows="6" maxlength="3000" class="area_input_element form__field"
+          required></textarea>
+      </div>
+    </div>
+
+    <div class=" btn_wrapper">
+      <a type="submit" class="animated-button1">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        send message
+      </a>
+    </div>
+
+
+  </form>
+
+
+</div>

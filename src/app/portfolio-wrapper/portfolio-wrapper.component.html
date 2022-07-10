@@ -1,0 +1,48 @@
+<div class="content_wrapper">
+    <div class="bg">
+        <div class="main">
+            <div class="container">
+                <div *ngFor='let in of hexagonCountArr ;let i = index'></div>
+            </div>
+        </div>
+    </div>
+    <canvas class="canv" #canvas width="{{cWidth}}" height="{{cHeight}}"></canvas>
+    <div class="content_parts_wrapper">
+        <div class="content_parts_sections_wrapper">
+            <app-contact [status]="activeSection"></app-contact>
+            <app-home [status]="activeSection"></app-home>
+            <app-projects [status]="activeSection"></app-projects>
+        </div>
+
+
+
+        
+        <div class="navbar_wrapper">
+            <div class="navbar">
+
+                <div (click)="changeSection('home')" [ngClass]="{'btn_section_active' : activeSection == 'home'}" class="btn_section">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    home
+                </div>
+                <div (click)="changeSection('projects')" [ngClass]="{'btn_section_active' : activeSection == 'projects'}" class="btn_section">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    projects
+                </div>
+                <div (click)="changeSection('contact')" [ngClass]="{'btn_section_active' : activeSection == 'contact'}" class="btn_section ">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    contact
+                </div>
+      
+            </div>
+        </div>
+    </div>
+</div>

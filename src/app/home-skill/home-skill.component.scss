@@ -1,0 +1,138 @@
+.hexagon_wrapper {
+    margin: 3%;
+    display: flex;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    position: relative;
+}
+
+.text {
+    color: darkgrey;
+    font-size: 12px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+
+::-webkit-scrollbar-track
+{
+	border: 5px solid rgba(16, 29, 31, 0.8); 
+	background-color: rgba(16, 29, 31, 0.8);
+}
+
+::-webkit-scrollbar
+{
+	width: 15px;
+	background-color: black;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: rgb(102, 9, 31);
+	border-radius: 10px;
+}
+
+
+@media only screen and (max-height: 600px) {
+    .hexagon_wrapper { 
+        width: 60px;
+        height: 60px; 
+    }
+    
+    .text {
+        font-size: 10px;
+    }
+    
+}
+
+@media only screen and (max-height: 750px) {
+    .hexagon_wrapper { 
+        width: 40px;
+        height: 40px; 
+    }
+    
+    .text {
+        font-size: 8px;
+    }
+    
+}
+
+@media only screen and (max-width: 400px) {
+    .hexagon_wrapper { 
+        width: 60px;
+        height: 60px; 
+    }
+    
+    .text {
+        font-size: 10px;
+    }
+    
+}
+
+.content_wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(16, 29, 31, 0.8);
+    overflow: scroll; 
+    overflow-x: hidden;
+}
+
+.hexagon_content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    >img{
+        height: 40%;
+    }
+}
+
+.hexagon_content_badge {
+    position: absolute;
+    top: 65%;
+    background-color: rgba(16, 29, 31, 1);
+    width: 80%;
+    height: 20%;
+    border-radius: 5px;
+}
+
+.hexagon {
+    position: relative;
+    width: 46%;
+    height: 80%;
+    margin: auto;
+    color: white;
+    background: linear-gradient(-180deg, rgb(102, 9, 31), rgb(162, 9, 41));
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.hexagon:before,
+.hexagon:after {
+    position: absolute;
+    content: "";
+    background: inherit;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    transition: 0.5s;
+    transform-origin: center;
+}
+
+.hexagon:before {
+    transform: rotateZ(60deg);
+}
+
+.hexagon:after {
+    transform: rotateZ(-60deg);
+}

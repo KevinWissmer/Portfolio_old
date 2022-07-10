@@ -1,0 +1,81 @@
+<div class="content_wrapper" [class.move_in]="status  == 'home'">
+
+    <div class="portfolio_image_wrapper">
+        <div class="portfolio_image">
+            <img src="../../assets/img/BP_Ori2_300dpi.jpg" alt="">
+        </div>
+    </div>
+    <div class="info_content_wrapper">
+
+        <div class="info_section" #info_section>
+            <div class="info_section_header_btn_wrapper">
+                <div (click)="changeHomeSection('home', 1)" class="info_section_header_wrapper">
+                    <div class="border1" [ngClass]="{'border1_active' : activeHomeSection == 'home'}" ></div>
+                    <div class="info_section_btn">
+                        <p>Home</p>
+                    </div>
+                </div>
+                <div (click)="changeHomeSection('skill', 2)" class="info_section_header_wrapper">
+                    <div class="border1" [ngClass]="{'border1_active' : activeHomeSection == 'skill'}" ></div>
+                    <div class="info_section_btn">
+                        <p>Skills</p>
+                    </div>
+                </div>
+                <div (click)="changeHomeSection('business', 3)" class="info_section_header_wrapper">
+                    <div class="border1" [ngClass]="{'border1_active' : activeHomeSection == 'business'}" ></div>
+                    <div class="info_section_btn">
+                        <p>Business</p>
+                    </div>
+                </div>
+                <div (click)="changeHomeSection('private', 4)" class="info_section_header_wrapper">
+                    <div class="border1" [ngClass]="{'border1_active' : activeHomeSection == 'private'}" ></div>
+                    <div class="info_section_btn">
+                        <p>private</p>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="border_2_wrapper" 
+            [ngStyle]="{'width.px':   borderSize  }">
+                <div class="border2" [ngClass]="{'border2_active' : activeHomeSection == 'home'}"></div>
+                <div class="border2" [ngClass]="{'border2_active' : activeHomeSection == 'skill'}"></div>
+                <div class="border2" [ngClass]="{'border2_active' : activeHomeSection == 'business'}"></div>
+                <div class="border2" [ngClass]="{'border2_active' : activeHomeSection == 'private'}"></div>
+            </div>
+            
+            <div class="info_section_content_border_wrapper"> 
+                
+                <div class="border_3_wrapper">
+                    <div class="border3" [ngClass]="{'border3_active' : activeHomeSection == 'home'}"></div>
+                    <div class="border3" [ngClass]="{'border3_active' : activeHomeSection == 'skill'}"></div>
+                    <div class="border3" [ngClass]="{'border3_active' : activeHomeSection == 'business'}"></div>
+                    <div class="border3" [ngClass]="{'border3_active' : activeHomeSection == 'private'}"></div>
+                </div>
+
+                <div class="info_section_content_wrapper">
+                    <div class="info_section_content" [ngClass]="{'content_active' : activeHomeSection == 'home'}"><app-home-home class="info_section_content_component"></app-home-home>
+
+                    </div>
+                    <div class="info_section_content" [ngClass]="{'content_active' : activeHomeSection == 'skill'}"><app-home-skill class="info_section_content_component"></app-home-skill>
+
+                    </div>
+                    <div class="info_section_content" [ngClass]="{'content_active' : activeHomeSection == 'business'}"><app-home-business class="info_section_content_component"></app-home-business>
+
+                    </div>
+                    <div class="info_section_content" [ngClass]="{'content_active' : activeHomeSection == 'private'}"><app-home-private class="info_section_content_component"></app-home-private>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="border_4_wrapper">
+                <div class="border4" [ngClass]="{'border4_active' : activeHomeSection == 'home'}"></div>
+                <div class="border4" [ngClass]="{'border4_active' : activeHomeSection == 'skill'}"></div>
+                <div class="border4" [ngClass]="{'border4_active' : activeHomeSection == 'business'}"></div>
+                <div class="border4" [ngClass]="{'border4_active' : activeHomeSection == 'private'}"></div>
+            </div>
+        </div>
+
+    </div>
+</div>

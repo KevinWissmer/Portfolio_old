@@ -1,0 +1,68 @@
+<div class="content_wrapper" [class.move_in]="status  == 'projects'">
+
+    <div (click)="prevProject()" class="arrow_wrapper" style="left: 5px">
+        <img src="../../assets/icons/arrow-101-64.png" alt="" srcset="">
+    </div>
+
+    <div class="projects_wrapper_wrapper" *ngFor="let projectlist of projectListList;let indexOfProjectlist=index;">
+        <div [ngStyle]="{'top': -this.current_project_index * this.projectWrapperHeight + 'px'}"
+        class="projects_wrapper {{classes[indexOfProjectlist]}}">
+        <div class="single_project_wrapper" *ngFor="let project of projectlist">
+            <div class="project_descr_wrapper">
+
+                <div class="project_descr">
+                    <p>{{project.description}}</p>
+                </div>
+                <div class="switch_project_btn_wrapper">
+                    <img (click)="prevProject()" class="visible_mobile" src="../../assets/icons/arrow-left.png" alt="">
+                    <img (click)="nextProject()" class="visible_mobile" src="../../assets/icons/arrow-right.png" alt="">
+                </div>
+            </div>
+            <div class="project_name_wrapper">
+                <div class="project_name">
+                    <p>{{project.name}}</p>
+                </div>
+            </div>
+            <div class="project_btn_wrapper">
+
+                <div class="hex_btn " (click)="toggleProjectval(0, project, project.homeURL)" [ngClass]="{'hex_btn_open' : toggledProjectNr[0] == project.id}">
+                    <div class="hex_btn_img_wrapper">
+                        <img  src="../../assets/icons/home-2-32.ico" alt="">
+                    </div>
+                    <div class="hex_btn_text_wrapper" (click)="goToLink(project.homeURL)">
+                        <a>hosted Project</a>
+                    </div>
+                </div>
+ 
+                <div class="hex_btn" (click)="toggleProjectval(1, project, project.DocsURL)" [ngClass]="{'hex_btn_open' : toggledProjectNr[1] == project.id}">
+                    <div class="hex_btn_img_wrapper"  >
+                        <img  src="../../assets/icons/document-32.png" alt="">
+                    </div>
+                    <div class="hex_btn_text_wrapper" (click)="goToLink(project.DocsURL)">
+                        <a>JSDocs</a>
+                    </div>
+                </div>
+
+                <div class="hex_btn " (click)="toggleProjectval(2, project, project.githubURL)" [ngClass]="{'hex_btn_open' : toggledProjectNr[2] == project.id}">
+                    <div class="hex_btn_img_wrapper">
+                        <img  src="../../assets/icons/github-6-48.png" alt="">
+                    </div>
+                    <div class="hex_btn_text_wrapper" (click)="goToLink(project.githubURL)">
+                        <a>GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="project_image_wrapper hex_outline "><img class="hex"  src="{{project.imgSrc}}" alt=""></div>
+        </div>
+    </div>
+    </div>
+    
+
+
+    <div (click)="nextProject()" class="arrow_wrapper" style="right: 5px">
+        <img src="../../assets/icons/arrow-36-64.png" alt="" srcset="">
+    </div>
+
+
+</div>

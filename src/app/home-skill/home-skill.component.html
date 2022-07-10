@@ -1,0 +1,14 @@
+
+
+<div class="content_wrapper">
+
+    <div class="hexagon_wrapper" *ngFor="let skill of skills">
+        <div class="hexagon">
+        </div>
+        <div class="hexagon_content">
+            <img src="../../assets/icons/skill/lightgrey/{{skill}}.png" alt="">
+            <div class="hexagon_content_badge text">{{skill.charAt(0).toUpperCase() + skill.slice(1)}}</div>
+        </div>
+    </div>
+
+</div>

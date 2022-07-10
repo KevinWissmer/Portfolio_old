@@ -1,0 +1,53 @@
+<div class="content_wrapper">
+    <canvas (document:mousemove)="fire($event)" #canvas width="{{cWidth}}" height="{{cHeight}}"></canvas>
+
+    <div class="info_box_wrapper" [ngClass]="{ 'info_open': this.infoBoxOpen , 'info_closed': !this.infoBoxOpen  }">
+        <div class="info_box_btn_wrapper" (click)="openInfoBlock()">
+            <div class="info_box_btn">
+                <p>open info to animation</p>
+            </div>
+        </div>
+        <div class="info_box_text">
+            <h2>Particles in a 2D-box</h2>
+            <div class="chart_wrapper">
+                <div class="chart">
+                    <div class="column" *ngFor="let item1 of this.speedCounts; index as i">
+                        {{i * 7}} - {{(i + 1) * 7}}
+                        <div class="column_element" *ngFor="let item2 of item1;">
+                        </div>
+    
+                    </div>
+                </div>
+                <p>Count of discs in certain speedrange</p>
+                
+            </div>
+                
+
+            <div class="info_text">
+                This animation or model shows the motion of particles. In detail it estimates the temperature with the
+                average kinetic energy of the particles.
+                The Chart above shows the statistics, which should, regardles the initial situation, form the
+                Maxwell-Boltzmann-distribution.
+                In this animation it is very unlikely, that the chart will take the exact form of the distribution, but
+                if we would increase the number of discs, this would form this after a little relaxation time.
+                I have done this animation with those predicted results with C and Python, but the process costs a lot
+                of performance. Therfore you can only find a glimpse of what is possible.
+            </div>
+            <div class="placeholder_btn"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="landing_btn_wrapper">
+    <a href="#" (click)="stopAnimation()" class="animated-button1" routerLink="/portfolio">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        I want more!
+      </a>
+</div>
+
+  
+  

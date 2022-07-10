@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    background-color: black !important;
+}
+
+.router_content{
+  width: 100%;
+}
+
+.flag_sides{
+  display: none; 
+}
+
+.router_content_wrapper{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1700px) {
+  .router_content{ 
+  }
+  
+  .flag_sides{
+    width: calc((100% - 1700px) / 2);
+    display: block;
+    background-color: black;
+  }
+
+}
+
+@media screen and  (orientation: landscape) {
+    html {
+      transform: rotate(-90deg);
+      transform-origin: left top;
+      width: 100vh;
+      overflow-x: hidden;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+  }
