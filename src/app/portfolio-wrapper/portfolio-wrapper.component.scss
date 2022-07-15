@@ -1,218 +1,247 @@
 .main {
-    display: flex;
-    --s: 100px; 
-    --m: 4px; 
-    --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
-    --hexColor: #090909;
+  display: flex;
+  --s: 100px;
+  --m: 4px;
+  --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
+  --hexColor: #090909;
+  --dargBgColor: #161616; //rgb(16, 29, 31)
+  --lightRedColor: rgb(162, 9, 41);
+  --darkRedColor: rgb(102, 9, 31);
+  --lightTextColor: rgb(211, 211, 211);
 }
 
 .container {
-    font-size: 0; 
+  font-size: 0;
 }
 
 .container div {
-    width: var(--s);
-    margin: var(--m);
-    height: calc(var(--s)*1.1547);
-    display: inline-block;
-    font-size: initial;
-    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  width: var(--s);
+  margin: var(--m);
+  height: calc(var(--s)*1.1547);
+  display: inline-block;
+  font-size: initial;
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
 
-    background: linear-gradient(90deg, var(--hexColor) 0%, var(--hexColor) 50%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(90deg, var(--hexColor) 0%, var(--hexColor) 50%, rgba(0, 0, 0, 1) 100%);
 
-    margin-bottom: calc(var(--m) - var(--s)*0.2885);
+  margin-bottom: calc(var(--m) - var(--s)*0.2885);
 }
 
 .container::before {
-    content: "";
-    width: calc(var(--s)/2 + var(--m));
-    float: left;
-    height: 120%;
-    shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px),
-            #000 0 var(--f));
+  content: "";
+  width: calc(var(--s)/2 + var(--m));
+  float: left;
+  height: 120%;
+  shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px),
+      #000 0 var(--f));
 }
 
 
 .bg {
-    position: absolute;
-    top: -54px;
-    left: -54px;
-    right: -154px;
-    bottom: -154px;
+  position: absolute;
+  top: -54px;
+  left: -54px;
+  right: -154px;
+  bottom: -154px;
 
 }
 
-.content_wrapper { 
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
+.content_wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
 }
 
 .canv {
-    position: absolute;
-    z-index: -2;
-    background-color: black;
-}
- 
-
-.content_parts_wrapper{
-    position: absolute;
-    top:10px;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;  
+  position: absolute;
+  z-index: -2;
+  background-color: black;
 }
 
-.content_parts_sections_wrapper{ 
-    height: 90%;
-    width:100%;
+
+.content_parts_wrapper {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
 }
 
-.navbar{ 
-    height: 10%;
-    width: 100%; 
-    max-width: 500px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.content_parts_sections_wrapper {
+  height: 90%;
+  width: 100%;
 }
 
-.section{
-    height: 100%;
-    width: 100%;
+.navbar {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar_wrapper{
+.section {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar_wrapper {
+  height: 10%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
-.btn:hover{ 
-    //color: aliceblue; 
+.imprint_link{
+  background-color: rgba(16, 16, 16, 0.8); 
+  padding: 4px;
+  cursor: pointer;
+  font-size: 15px !important;
+  color: var(--lightTextColor);
+}
+
+.imprint_link:hover{
+  color: var(--lightRedColor);
+}
+
+.imprint_link_wrapper {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn_section:hover {
+  border-color: var(--lightRedColor);
 }
 
 
 @media only screen and (max-width: 400px) {
 
-  .btn_section{ 
-    font-size: 15px  !important;
+  .btn_section {
+    font-size: 15px !important;
+  }
 }
+
+.text {
+  color: var(--lightTextColor);
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
-
-
-
-
-
-
-
 
 .btn_section {
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    padding: 10px;
-    border-radius: 4px;
-    background-color: rgba(16, 29, 31, 0.8);
-  
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    margin: 4px;
-    color: darkgrey;
-        font-size: 20px; 
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    filter: hue-rotate(0deg);
-    border: 3px solid rgb(102, 9, 31);
-    transition: all 0.1s linear;
-  
-    
-  }
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgba(16, 16, 16, 0.8);
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  margin: 4px;
 
-  .btn_section_active  {
-    border: 1px solid transparent;
-    span {
-      position: absolute;
-      display: block;
+  filter: hue-rotate(0deg);
+  border: 3px solid;
+  border-color: var(--darkRedColor);
+  transition: all 0.1s linear;
 
-      &:nth-child(1) { 
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, rgba(162,9,41,1));
-        animation: animate1 2s linear infinite;
-      }
-      @keyframes animate1 {
-        0% {
-          left: -100%;
-        }
-        50%,
-        100% {
-          left: 100%;
-        }
+
+}
+
+.btn_section_active {
+  border: 0px solid transparent;
+
+  span {
+    position: absolute;
+    display: block;
+
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--lightRedColor));
+      animation: animate1 2s linear infinite;
+    }
+
+    @keyframes animate1 {
+      0% {
+        left: -100%;
       }
 
-      &:nth-child(2) { 
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, var(--lightRedColor));
+      animation: animate2 2s linear infinite;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes animate2 {
+      0% {
         top: -100%;
-        right: 0;
-        width: 3px;
-        height: 100%;
-        background: linear-gradient(180deg, transparent, rgba(162,9,41,1));
-        animation: animate2 2s linear infinite;
-        animation-delay: 0.5s;
       }
 
-      @keyframes animate2 {
-        0% {
-          top: -100%;
-        }
-        50%,
-        100% {
-          top: 100%;
-        }
+      50%,
+      100% {
+        top: 100%;
       }
-      &:nth-child(3) { 
-        bottom: 0;
-        right: 0;
-        width: 100%;
+    }
 
-        background: linear-gradient(270deg, transparent, rgba(162,9,41,1));
-        animation: animate3 2s linear infinite;
-        animation-delay: 1s;
-      }
-      @keyframes animate3 {
-        0% {
-          right: -100%;
-          height: 3px;
-        }
-        50%,
-        100% {
-          height: 2px;
-          right: 100%;
-        }
+    &:nth-child(3) {
+      bottom: 0;
+      right: 0;
+      width: 100%;
+
+      background: linear-gradient(270deg, transparent, var(--lightRedColor));
+      animation: animate3 2s linear infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes animate3 {
+      0% {
+        right: -100%;
+        height: 3px;
       }
 
-      &:nth-child(4) { 
+      50%,
+      100% {
+        height: 2px;
+        right: 100%;
+      }
+    }
+
+    &:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, var(--lightRedColor));
+      animation: animate4 2s linear infinite;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes animate4 {
+      0% {
         bottom: -100%;
-        left: 0;
-        width: 3px;
-        height: 100%;
-        background: linear-gradient(360deg, transparent, rgba(162,9,41,1));
-        animation: animate4 2s linear infinite;
-        animation-delay: 1.5s;
       }
-      @keyframes animate4 {
-        0% {
-          bottom: -100%;
-        }
-        50%,
-        100% {
-          bottom: 100%;
-        }
+
+      50%,
+      100% {
+        bottom: 100%;
       }
     }
   }
-  
+}

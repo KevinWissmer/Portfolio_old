@@ -1,4 +1,4 @@
-<div class="content_wrapper" [class.move_in]="status  == 'home'">
+<div class="content_wrapper main" [class.move_in]="status  == 'home'">
 
     <div class="portfolio_image_wrapper">
         <div class="portfolio_image">
@@ -30,7 +30,7 @@
                 <div (click)="changeHomeSection('private', 4)" class="info_section_header_wrapper">
                     <div class="border1" [ngClass]="{'border1_active' : activeHomeSection == 'private'}" ></div>
                     <div class="info_section_btn">
-                        <p>private</p>
+                        <p>Private</p>
                     </div>
                 </div>
             </div>

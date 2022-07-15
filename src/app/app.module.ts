@@ -13,6 +13,7 @@ import { HomeHomeComponent } from './home-home/home-home.component';
 import { HomeSkillComponent } from './home-skill/home-skill.component';
 import { HomeBusinessComponent } from './home-business/home-business.component';
 import { HomePrivateComponent } from './home-private/home-private.component';
+import { ImprintDataprotectionComponent } from './imprint-dataprotection/imprint-dataprotection.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomePrivateComponent } from './home-private/home-private.component';
     HomeHomeComponent,
     HomeSkillComponent,
     HomeBusinessComponent,
-    HomePrivateComponent
+    HomePrivateComponent,
+    ImprintDataprotectionComponent
   ],
   imports: [
     BrowserModule,

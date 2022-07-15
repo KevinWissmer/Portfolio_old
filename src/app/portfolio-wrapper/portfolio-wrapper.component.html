@@ -1,4 +1,4 @@
-<div class="content_wrapper">
+<div class="content_wrapper main">
     <div class="bg">
         <div class="main">
             <div class="container">
@@ -12,37 +12,47 @@
             <app-contact [status]="activeSection"></app-contact>
             <app-home [status]="activeSection"></app-home>
             <app-projects [status]="activeSection"></app-projects>
+            <app-imprint-dataprotection [status]="activeSection"></app-imprint-dataprotection>
         </div>
 
 
 
-        
+
         <div class="navbar_wrapper">
             <div class="navbar">
 
-                <div (click)="changeSection('home')" [ngClass]="{'btn_section_active' : activeSection == 'home'}" class="btn_section">
+                <div (click)="changeSection('home')" [ngClass]="{'btn_section_active' : activeSection == 'home'}"
+                    class="btn_section text">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     home
                 </div>
-                <div (click)="changeSection('projects')" [ngClass]="{'btn_section_active' : activeSection == 'projects'}" class="btn_section">
+                <div (click)="changeSection('projects')"
+                    [ngClass]="{'btn_section_active' : activeSection == 'projects'}" class="btn_section text">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     projects
                 </div>
-                <div (click)="changeSection('contact')" [ngClass]="{'btn_section_active' : activeSection == 'contact'}" class="btn_section ">
+                <div (click)="changeSection('contact')" [ngClass]="{'btn_section_active' : activeSection == 'contact'}"
+                    class="btn_section text">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     contact
                 </div>
-      
+
+
             </div>
+            <div class="imprint_link_wrapper" (click)="changeSection('imprint')">
+                 <div class="text imprint_link">Imprint/ Data-protection</div>
+            </div>
+
         </div>
     </div>
+
 </div>

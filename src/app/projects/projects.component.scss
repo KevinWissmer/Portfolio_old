@@ -1,19 +1,32 @@
+.main {
+    --dargBgColor: #161616; //rgb(16, 29, 31)
+    --lightRedColor: rgb(162, 9, 41);
+    --darkRedColor: rgb(102, 9, 31);
+    --lightTextColor: rgb(211,211,211);
+  }
+
+  //@font-face {
+    //font-family: "Oxygen"; 
+    //src: local("Oxygen"), url("../../assets/fonts/ethnocentric.otf") format('opentype');
+    //src: local("Oxygen"), url("../../assets/fonts/nasalization.otf") format('opentype');
+    //https://www.1001fonts.com/modern-fonts.html?page=2
+//}
+
+
 .content_wrapper {
     position: absolute;
     width: 100%;
     height: 85%;
 
     transition: left 255ms linear;
-    left: 200vw;
+    left: 200vw; 
 
-    color: aliceblue;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
 
     overflow: hidden;
-
 }
 
 .projects_wrapper {
@@ -29,7 +42,7 @@
 
 
 .arrow_wrapper {
-    border: 6px solid rgb(102, 9, 31);
+    border: 6px solid var(--darkRedColor);
     height: 100%;
     width: 50px;
     visibility: visible;
@@ -37,7 +50,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(16, 29, 31, 0.8);
+    background-color: rgba(15,15,15, 0.8);
+
     -webkit-clip-path: polygon(40% 30%, 60% 30%, 95% 33%, 95% 67%, 60% 70%, 40% 70%, 5% 67%, 5% 33%);
     clip-path: polygon(40% 30%, 60% 30%, 95% 33%, 95% 67%, 60% 70%, 40% 70%, 5% 67%, 5% 33%);
 
@@ -48,8 +62,8 @@
 }
 
 .arrow_wrapper:hover {
-    background-color: rgba(16, 29, 31, 1);
-    border: 6px solid rgba(162, 9, 41, 1);
+    background-color: var(--dargBgColor);
+    border: 6px solid var(--lightRedColor);
 }
 
 
@@ -83,7 +97,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(16, 29, 31, 1);
+    background-color: var(--dargBgColor);
 
     >img {
         height: 90%;
@@ -98,8 +112,12 @@
     width: 70%;
     top: 17%;
     left: 10%;
-    background-color: rgb(102, 9, 31);
-    background-image: url("../../assets/img/red_bg.jpg");
+    background-color: var(--darkRedColor);
+    background-image: linear-gradient(rgba(150, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("../../assets/img/red_bg.jpg");
+    //background-image: linear-gradient(rgba(255, 0, 0, 0.15),rgba(255, 0, 0, 0.15)), url("../../assets/img/red_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    //background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("../../assets/img/metallBg.png");
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 70% 100%, 30% 100%, 0% 85%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 70% 100%, 30% 100%, 0% 85%);
 
@@ -119,7 +137,7 @@
     >p {
         margin: 0%;
         padding: 10%;
-        color: darkgrey;
+        color: var(--lightTextColor);
         font-size: 20px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
@@ -139,7 +157,7 @@
     flex-direction: column;
 
     >div {
-        background-color: rgba(16, 29, 31, 1);
+        background-color: var(--dargBgColor);
         width: 60px;
 
         >img {
@@ -152,7 +170,7 @@
         >a {
             width: 40%;
             text-decoration: none;
-            color: darkgrey;
+            color: var(--lightTextColor);
             font-size: 15px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             text-align: center;
@@ -167,7 +185,7 @@
 .hex_btn {
     height: 30%;
     width: 150px !important;
-    background-color: rgba(16, 29, 31, 1);
+    background-color: var(--dargBgColor);
     aspect-ratio: 1 / 1;
     background-position: center;
     background-size: cover;
@@ -214,12 +232,12 @@
     >a {
         text-align: center;
         width: 100%;
-        color: #a9a9a9;
+        color: var(--lightTextColor);
         font-size: 15px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
         &:hover {
-            color: rgba(162, 9, 41, 1);
+            color: var(--lightRedColor);
         }
     }
 }
@@ -229,18 +247,27 @@
     height: 10%;
     width: 70%;
     top: 5%;
-    left: 20%;
-    border: 3px solid rgba(162, 9, 41, 1);
+    left: 15%;
+    border-left: 3px solid var(--lightRedColor);
+    border-top: 3px solid var(--lightRedColor) ;
+    border-bottom: 3px solid var(--lightRedColor);
+    
 }
 
 .project_name {
     position: absolute;
-
     height: 100%;
     width: 100%;
     top: 25%;
-    left: 10%;
-    background-color: rgba(16, 29, 31, 1);
+    left: 15%;
+    background-color: var(--dargBgColor);
+
+    //background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("../../assets/img/redBg.png");
+    //background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("../../assets/img/metallBg.png");
+    background-size: cover;
+    
+    -webkit-clip-path: polygon(0% 0%, 90% 0%, 100% 30%, 100% 70%, 90% 100%, 0% 100%, 0% 0%);
+    clip-path: polygon(0% 0%, 90% 0%, 100% 30%, 100% 70%, 90% 100%, 0% 100%, 0% 0%);
 
     display: flex;
     align-items: center;
@@ -248,9 +275,11 @@
 
     >p {
         padding-right: 10%;
-        color: #a9a9a9;
+        color: var(--lightTextColor);
         font-size: 20px;
+        //font-size: 15px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        //font-family: "Oxygen", Arial, Helvetica, sans-serif !important;
     }
 }
 
@@ -270,7 +299,9 @@
 
 
 
-.project_left {}
+.project_left {
+    margin-top: 0%;
+}
 
 .project_middle {
     transition-delay: 75ms;
@@ -363,7 +394,7 @@
 }
 
 .project_left {
-    margin-top: 10%;
+    margin-top: 0%;
 }
 
 .project_middle {
@@ -373,7 +404,7 @@
 @media only screen and (max-height: 850px) and (min-height: 800px) {
 
     .project_left {
-        margin-top: 5%;
+        margin-top: 0%;
     }
 
     .project_middle {
@@ -385,7 +416,7 @@
 
 
     .project_left {
-        margin-top: 15%;
+        margin-top: 0%;
     }
 
     .project_middle {

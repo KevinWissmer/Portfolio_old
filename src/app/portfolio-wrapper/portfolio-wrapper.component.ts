@@ -16,7 +16,7 @@ export class PortfolioWrapperComponent implements AfterViewInit, OnInit {
   hexagonCountArr = [];
   hexagonColor = '#333333';
 
-  activeSection = "contact";
+  activeSection = "home";
 
   private ctx: CanvasRenderingContext2D;
   constructor() { }
@@ -68,7 +68,7 @@ export class PortfolioWrapperComponent implements AfterViewInit, OnInit {
       let grad = this.ctx.createLinearGradient(-1500+this.loopStop,0, -500 + this.loopStop,1000 );  
       //this.ctx.rotate(45 * Math.PI / 180);
       grad.addColorStop(0.3, "black");
-      grad.addColorStop(0.5, 'rgb(102, 9, 31)');
+      grad.addColorStop(0.5, 'rgba(230, 9, 41,0.8)');
       grad.addColorStop(0.7, "black");
       
       this.ctx.fillStyle = grad;

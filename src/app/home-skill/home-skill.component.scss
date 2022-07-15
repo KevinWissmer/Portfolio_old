@@ -1,9 +1,16 @@
+.main {
+    --dargBgColor: #161616; //rgb(16, 29, 31)
+    --lightRedColor: rgb(162, 9, 41);
+    --darkRedColor: rgb(102, 9, 31);
+    --lightTextColor: rgb(211, 211, 211);
+}
+
 .hexagon_wrapper {
     margin: 3%;
     display: flex;
     width: 80px;
     height: 80px;
-    cursor: pointer;
+    //cursor: pointer;
     position: relative;
 }
 
@@ -15,70 +22,66 @@
 }
 
 
-::-webkit-scrollbar-track
-{
-	border: 5px solid rgba(16, 29, 31, 0.8); 
-	background-color: rgba(16, 29, 31, 0.8);
+::-webkit-scrollbar-track {
+    border: 5px solid rgba(16, 16, 16, 0.9);
+    background-color: rgba(16, 16, 16, 0.9);
 }
 
-::-webkit-scrollbar
-{
-	width: 15px;
-	background-color: black;
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: var(--dargBgColor);
 }
 
-::-webkit-scrollbar-thumb
-{
-	background-color: rgb(102, 9, 31);
-	border-radius: 10px;
+::-webkit-scrollbar-thumb {
+    background-color: var(--darkRedColor);
+    border-radius: 10px;
 }
-
 
 @media only screen and (max-height: 600px) {
-    .hexagon_wrapper { 
+    .hexagon_wrapper {
         width: 60px;
-        height: 60px; 
+        height: 60px;
     }
-    
+
     .text {
         font-size: 10px;
     }
-    
-}
 
-@media only screen and (max-height: 750px) {
-    .hexagon_wrapper { 
-        width: 40px;
-        height: 40px; 
-    }
-    
-    .text {
-        font-size: 8px;
-    }
-    
 }
 
 @media only screen and (max-width: 400px) {
-    .hexagon_wrapper { 
+    .hexagon_wrapper {
         width: 60px;
-        height: 60px; 
+        height: 60px;
     }
-    
+
     .text {
         font-size: 10px;
     }
-    
+
 }
 
-.content_wrapper{
+@media only screen and (min-width: 1000px) and (min-height: 600px) {
+    .hexagon_wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+}
+
+.content_wrapper {
     height: 100%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: rgba(16, 29, 31, 0.8);
-    overflow: scroll; 
+    background-color: rgba(16, 16, 16, 0.8);
+    overflow: scroll;
     overflow-x: hidden;
 }
 
@@ -90,7 +93,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    >img{
+
+    >img {
         height: 40%;
     }
 }
@@ -98,7 +102,7 @@
 .hexagon_content_badge {
     position: absolute;
     top: 65%;
-    background-color: rgba(16, 29, 31, 1);
+    background-color: var(--dargBgColor);
     width: 80%;
     height: 20%;
     border-radius: 5px;
@@ -110,7 +114,7 @@
     height: 80%;
     margin: auto;
     color: white;
-    background: linear-gradient(-180deg, rgb(102, 9, 31), rgb(162, 9, 41));
+    background: linear-gradient(-180deg, var(--darkRedColor), var(--lightRedColor));
     display: flex;
     align-content: center;
     justify-content: center;
