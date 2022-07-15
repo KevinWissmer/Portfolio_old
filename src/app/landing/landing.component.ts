@@ -20,6 +20,9 @@ export class LandingComponent implements AfterViewInit {
   landingText = [];
   infoBoxOpen = false;
   radius = 30;
+  speeds = [];
+  speedCounts = [];
+  loopstop = 0;
 
   constructor(private router: Router) { }
   discs = this.generateDiscs();;
@@ -213,9 +216,6 @@ export class LandingComponent implements AfterViewInit {
     return time;
   }
 
-
-  speeds = [];
-  speedCounts = [];
   getAllSpeeds() {
     this.speeds = [];
     this.discs.forEach(disc => {
@@ -296,10 +296,7 @@ export class LandingComponent implements AfterViewInit {
     this.discs[discIndex2].speedY = speedY2;
   }
 
-  loopstop = 0;
-
   async myLoop() {
-
     let time = await this.calculateAllCollisions();
     await this.checkAllDistances();
     await this.timeout(time * 30);
@@ -307,9 +304,7 @@ export class LandingComponent implements AfterViewInit {
     await this.setForward(time);
     this.setTextForward();
     this.drawText();
-
   }
-
 
   async checkAllDistances() {
     let forbidden = [];
@@ -325,14 +320,10 @@ export class LandingComponent implements AfterViewInit {
               forbidden.push(j);
               this.discs[i].lastHitSmallDistance = j
             }
-
           }
         }
-
       }
-
     }
-
   }
 
 
@@ -362,25 +353,13 @@ export class LandingComponent implements AfterViewInit {
         disc.collisionTimes[3] = 999999;
       }
     }
-
-
   }
 
   timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-
-
-  fire(e) {
-
-  }
-
-
-
-
   checkBorder(disc) {
-
     if (disc.y + disc.speedY + this.radius < this.cHeight) {
       if (disc.y + disc.speedY + (this.radius * disc.dirY) > 0) {
         disc.y = disc.y + disc.speedY;
@@ -396,7 +375,6 @@ export class LandingComponent implements AfterViewInit {
       let dist = this.cHeight - disc.y + disc.speedY + this.radius;
       disc.y = this.cHeight - dist;
     }
-
 
     if (disc.x + disc.speedx + this.radius < this.cWidth) {
       if (disc.x + disc.speedx + (this.radius * disc.dirX) > 0) {
@@ -414,6 +392,4 @@ export class LandingComponent implements AfterViewInit {
       disc.x = this.cWidth - dist;
     }
   }
-
-
 }
