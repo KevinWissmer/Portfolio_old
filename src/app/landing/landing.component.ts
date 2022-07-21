@@ -24,6 +24,11 @@ export class LandingComponent implements AfterViewInit {
   speedCounts = [];
   loopstop = 0;
 
+  dargBgColor: "#161616";
+  lightRedColor: "rgb(162, 9, 41)";
+  darkRedColor: "rgb(102, 9, 31)";
+  lightTextColor: "rgb(211, 211, 211)";
+
   constructor(private router: Router) { }
   discs = this.generateDiscs();;
 
@@ -83,7 +88,7 @@ export class LandingComponent implements AfterViewInit {
 
   renewCanvasBg() {
     this.ctx.clearRect(0, 0, this.cWidth, this.cHeight);
-    this.ctx.fillStyle = "rgba(16,29,31,1)";
+    this.ctx.fillStyle = "rgb(16,16,16)";
     this.ctx.fillRect(0, 0, this.cWidth, this.cHeight); 
   }
 
@@ -96,7 +101,7 @@ export class LandingComponent implements AfterViewInit {
 
     this.ctx.beginPath();
     this.ctx.lineWidth = 6;
-    this.ctx.strokeStyle = "rgba(162,9,41,1)";
+    this.ctx.strokeStyle = this.lightRedColor;
     this.ctx.rect((this.cWidth  * factor    / 4 - this.cHeight  / 10) - 70, (this.cHeight / 3 - this.cHeight  / 10) - 70, (this.cWidth * factor  / 4 + 3 * lineheight) , (this.cHeight   / 3) );
     this.ctx.stroke();
 
@@ -128,7 +133,7 @@ export class LandingComponent implements AfterViewInit {
   }
 
   fillDiscs() {
-    this.ctx.fillStyle = "rgba(102,9,31,1)";
+    this.ctx.fillStyle = "rgba(,1)";
     let boxwidth = (this.cWidth - (this.spacewidth * 16)) / 15;
     let boxheight = (this.cHeight - (this.spacewidth * 16)) / 15;
     this.discs.forEach((disc, i) => {

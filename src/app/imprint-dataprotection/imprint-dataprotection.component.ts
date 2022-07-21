@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./imprint-dataprotection.component.scss']
 })
 export class ImprintDataprotectionComponent implements OnInit {
+  type = 'imprint';
 
   constructor() { }
 
@@ -13,5 +14,7 @@ export class ImprintDataprotectionComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
 
 }

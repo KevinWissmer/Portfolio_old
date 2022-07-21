@@ -12,7 +12,7 @@
 
   </div>
 
-  <form class="input_form_wrapper" method="post" action=" ">
+  <form class="input_form_wrapper" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
     <div class="  form_header_wrapper">
       <div class="form_header">
@@ -23,33 +23,39 @@
     <div class="input_group">
       <label for="Name" class="input_label  ">Your name</label>
       <div class="input_field_wrapper">
-        <input type="text" id="Name" name="Name" class="input_element form__field text" required>
+        <input type="text" id="Name"  class="input_element form__field text" required [(ngModel)]="contact.name"
+        name="name"
+        #name="ngModel">
       </div>
     </div>
 
     <div class="input_group">
       <label for="Email" class="input_label  ">Your email address</label>
       <div class="input_field_wrapper">
-        <input type="email" id="Email" name="Email" class="input_element form__field text" required>
+        <input type="email" id="Email"  class="input_element form__field text" required [(ngModel)]="contact.email"
+        name="email"
+        #email="ngModel">
       </div>
     </div>
 
     <div class="input_group area_input_group">
       <label for="Message" class="input_label ">Your message</label>
       <div class="input_field_wrapper area_input_field_wrapper">
-        <textarea id="Message" name="Message" rows="6" maxlength="3000" class="area_input_element form__field text"
-          required></textarea>
+        <textarea id="Message" rows="6" maxlength="3000" class="area_input_element form__field text"
+          required [(ngModel)]="contact.message"
+          name="message"
+          #message="ngModel"></textarea>
       </div>
     </div>
 
     <div class=" btn_wrapper ">
-      <a type="submit" class="animated-button1">
+      <button type="submit" class="animated-button1">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         send message
-      </a>
+      </button> 
     </div>
 
 

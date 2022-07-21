@@ -1,5 +1,5 @@
 <div class="content_wrapper">
-    <canvas (document:mousemove)="fire($event)" #canvas width="{{cWidth}}" height="{{cHeight}}"></canvas>
+    <canvas #canvas width="{{cWidth}}" height="{{cHeight}}"></canvas>
 
     <div class="info_box_wrapper" [ngClass]="{ 'info_open': this.infoBoxOpen , 'info_closed': !this.infoBoxOpen  }">
         <div class="info_box_btn_wrapper" (click)="openInfoBlock()">
@@ -40,7 +40,7 @@
 
 
 <div class="landing_btn_wrapper">
-    <a href="#" (click)="stopAnimation()" class="animated-button1" routerLink="/portfolio">
+    <a   (click)="stopAnimation()" class="animated-button1" routerLink="/portfolio">
         <span></span>
         <span></span>
         <span></span>
